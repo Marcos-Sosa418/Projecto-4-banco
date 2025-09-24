@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con Menús Desplegables</title>
+  <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            background: #003366;
+            padding: 15px;
+        }
+
+        .categoria {
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .banner {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .banner img {
+            width: 90%;   
+            max-width: 800px; 
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+        }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .foto {
+      width: 100%;
+      height: 75px;
+      background-color: #002244;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .foto img {
+      height: 70px;
+    }
+
+    .top-buttons {
+      display: flex;
+      justify-content: center;
+      background: #f4f4f4;
+      padding: 10px;
+      gap: 20px;
+    }
+
+    .top-buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .top-buttons button:hover {
+      background-color: #0066d3;
+    }
+
+    .top-buttons button.active {
+      background-color: #0056b3;
+    }
+
+    .menu {
+      background-color: #f4f4f4;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .opcion {
+      position: relative;
+    }
+
+    .categoria {
+      color: #007bff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px 15px;
+      display: inline-block;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .categoria:hover {
+      background-color: #eaf3ff;
+    }
+
+    .opcion:hover .submenu,
+    .submenu:hover {
+      display: flex;
+    }
+
+    .submenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 50%;           
+		transform: translateX(-50%); 
+		background: #fff;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		padding: 20px;
+		flex-direction: row;
+		gap: 30px;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+		z-index: 10;
+		min-width: 600px;
+}
+	
+
+    .columna {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .columna h3 {
+      color: #0099cc;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .columna ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .columna ul li {
+      margin-bottom: 6px;
+    }
+
+    .columna ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .columna ul li a:hover {
+      color: #007bff;
+    }
+	
+        .menu {
+            display: flex;
+            gap: 20px;
+            background: #002244; 
+            padding: 15px 20px;
+        }
+
+        .categoria {
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .categoria:hover {
+            color: #ffaa00; 
+        }
+
+        .banner {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .banner img {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+        }
+
+    .ver-todos {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .ver-todos:hover {
+      background-color: #0056b3;
+    }
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+			background: white;
+			margin: auto;
+			padding: 20px;
+			border-radius: 10px;
+			max-width: 400px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+			text-align: center;
+        }
+
+        .modal-content h2 {
+            margin: 0 0 15px;
+            color: #007bff;
+        }
+
+        .modal-content button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+		
+		
+
+    .seccion {
+      display: none;
+    }
+    .seccion.active {
+      display: block;
+    }
+	
+        footer {
+            background: #002244;
+            color: white;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        footer h3 {
+            border-bottom: 2px solid #ffaa00;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 6px 0;
+        }
+
+        footer ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffaa00;
+        }
+
+        /* Créditos abajo */
+        .creditos {
+            background: #001122;
+            color: #bbb;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+  </style>
+</head>
+<body>
+  <div class="foto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwyTQCjl3D38QcUH1vRYc65zqGW9BNrju2g&s" alt="Logo">
+  </div>
+
+  <div class="top-buttons">
+    <button class="active" onclick="mostrarSeccion('personal', this)">Personal</button>
+    <button onclick="mostrarSeccion('preferente', this)">Preferente</button>
+	 <button onclick="mostrarSeccion('PYME', this)">PYME</button>
+	 <button onclick="mostrarSeccion('Empresarial', this)">Empresarial</button>
+	  <button onclick="mostrarSeccion('Gubernamental', this)">Gubernamental</button>
+	  <button onclick="mostrarSeccion('Internacional', this)">Internacional</button>
+	
+	 
+  </div>
+
+  <div id="personal" class="seccion active">
+    <div class="menu">
+      <div class="opcion">
+        <span class="categoria">Cuentas</span>
+        <div class="submenu">
+          <div class="columna">
+            <h3>Ahorro</h3>
+            <ul>
+              <li><a href="#">Cuenta de Ahorro en Pesos</a></li>
+              <li><a href="#">Cuenta Ahorro Más</a></li>
+              <li><a href="#">Cuenta de Ahorro Infantil en Pesos</a></li>
+			  <li><a href="#">Cuenta de Ahorro Infantil en Dólares</a></li>
+			  <li><a href="#">Cuenta de Ahorro en Dólares</a></li>
+			  <li><a href="#">Cuenta de Ahorro en Euros</a></li>
+			  <li><a href="#">Cuenta de Ahorro para residentes en el extranjero</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Corriente</h3>
+            <ul>
+              <li><a href="#">Cuenta Corriente Personal</a></li>
+              <li><a href="#">Cuenta Corriente Más Personal</a></li>
+              <li><a href="#">Cuenta Corriente sin Chequera Transaccional</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Soluciones Digitales</h3>
+            <ul>
+              <li><a href="#">Cuenta MIO Banreservas</a></li>
+              <li><a href="#">Cuenta Digital</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="opcion">
+        <span class="categoria">Inversiones</span>
+        <div class="submenu">
+          <div class="columna">
+            <h3>Depósito a Plazo</h3>
+            <ul>
+              <li><a href="#">Depósito a Plazo en Pesos</a></li>
+              <li><a href="#">Depósito a Plazo en dólares y euros</a></li>
+			  <li><a href="#">Depósito a Plazo Digital</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Mercado de Valores</h3>
+            <ul>
+              <li><a href="#">Inversiones en Títulos-Valores</a></li>
+              <li><a href="#">Fondos de Inversión</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+		            <div class="columna">
+            <h3>Soluciones Digitales</h3>
+            <ul>
+              <li><a href="#">Depósito a Plazo Digital</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+        </div>
+      </div>
+	  <div class="opcion">
+        <span class="categoria">Tarjetas</span>
+        <div class="submenu">
+          <div class="columna">
+            <h3>Débito</h3>
+            <ul>
+              <li><a href="#">Mastercard Débito Dólares</a></li>
+              <li><a href="#">Mastercard Débito Gold</a></li>
+			  <li><a href="#">Mastercard Débito Platinum</a></li>
+			  <li><a href="#">Mastercard Débito Standard</a></li>
+			  <li><a href="#">Mastercard Débito Standard Táctil</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Crédito</h3>
+            <ul>
+              <li><a href="#">Tarjeta de crédito Visa Ser</a></li>
+              <li><a href="#">Credimás Banreservas</a></li>
+			    <li><a href="#">Mastercard Black</a></li>
+				  <li><a href="#">Mastercard Standard Táctil Banreservas</a></li>
+				    <li><a href="#">Visa Flotilla Personal</a></li>
+					  <li><a href="#">Visa Infinite</a></li>
+					    <li><a href="#">Visa Platinum Universe</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+        </div>
+      </div>
+	   <div class="opcion">
+        <span class="categoria">Prestamos</span>
+        <div class="submenu">
+          <div class="columna">
+            <h3>Personales</h3>
+            <ul>
+              <li><a href="#">Préstamos de Consumo</a></li>
+              <li><a href="#">Vacaciones Felices</a></li>
+			  <li><a href="#">Educación y Cultura</a></li>
+			  <li><a href="#">Empleado Feliz</a></li>
+			  <li><a href="#">Sueldo Más</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Hipotecarios</h3>
+            <ul>
+             <li><a href="#">Préstamos Hipotecarios</a></li>
+             <li><a href="#">Préstamos Hipotecarios para residentes en el extranjero</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+		  <div class="columna">
+            <h3>Vehiculos</h3>
+            <ul>
+             <li><a href="#">Movilidad Banreservas</a></li>
+             <li><a href="#">Préstamos Vehículos Nuevos</a></li>
+			 <li><a href="#">Préstamos Vehículos Usados</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+        </div>
+		</div>
+		<div class="opcion">
+        <span class="categoria">Seguros</span>
+        <div class="submenu">
+          <div class="columna">
+            <h3>Seguros de Personas</h3>
+            <ul>
+              <li><a href="#">Accidentes Personales</a></li>
+              <li><a href="#">Asistencia Funeraria</a></li>
+			  <li><a href="#">Seguro Médico Internacional Just</a></li>
+			  <li><a href="#">Viajes Reservas</a></li>
+			  <li><a href="#">Vida Individual en Pesos y Dólares</a></li>
+			   <li><a href="#">Vida Reservas</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+          <div class="columna">
+            <h3>Riegos Generales</h3>
+            <ul>
+             <li><a href="#">Rescate De Prisa</a></li>
+             <li><a href="#">Vehículos de Motor</a></li>
+			 <li><a href="#">Vivienda Segura</a></li>
+            </ul>
+            <a href="#" class="ver-todos">Ver todos</a>
+          </div>
+        </div>
+		 </div>
+		 
+		 <div class="opcion">
+        <span class="categoria">Remesas,impuestos y servicios</span>
+        <div class="submenu">
+          <div class="columna">
+		  <h3>Funcion no disponible</h3>
+           
+        </div>
+		 </div>
+		  <div class="opcion">
+        <span class="categoria">Atencion al cliente </span>
+        <div class="submenu">
+          <div class="columna">
+		  <h3>Funcion no disponible</h3>
+		  </div>
+		  </div>
+		  </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Preferente -->
+  <div id="preferente" class="seccion">
+  <div class="menu">
+    <div class="opcion">
+      <span class="categoria">Cuentas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Ahorros</h3>
+          <ul>
+            <li><a href="#">Cuenta Ahorro Más</a></li>
+            <li><a href="#">Cuenta de Ahorro en Dólares</a></li>
+			 <li><a href="#">Cuenta de Ahorro en Euros</a></li>
+			  <li><a href="#">Cuenta de ahorro en pesos</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Corrientes</h3>
+          <ul>
+            <li><a href="#">Cuenta Corriente Más</a></li>
+            <li><a href="#">Cuenta corriente personal</a></li>
+			<li><a href="#">Cuenta Corriente sin Chequera Preferente</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	 <div class="opcion">
+      <span class="categoria">Inversiones</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Depósito a Plazo</h3>
+          <ul>
+            <li><a href="#">Depósito a Plazo en Pesos</a></li>
+            <li><a href="#">Depósito a Plazo en Dólares y Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Mercado de valores</h3>
+          <ul>
+            <li><a href="#">Inversiones en Títulos-Valores</a></li>
+            <li><a href="#">Fondos de Inversión</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+		 <div class="opcion">
+      <span class="categoria">Tarjetas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Debito</h3>
+          <ul>
+            <li><a href="#">Mastercard Débito Platinum</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Crédito</h3>
+          <ul>
+            <li><a href="#">Visa Platinum Universe</a></li>
+            <li><a href="#">Visa y Mastercard Platinum</a></li>
+			<li><a href="#">Mastercard Black</a></li>
+			<li><a href="#">Visa Infinite</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	  
+	   <div class="opcion">
+      <span class="categoria">Prestamos</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Personales</h3>
+          <ul>
+            <li><a href="#">Préstamos de Consumo</a></li>
+			 <li><a href="#">Préstamos en Dólares</a></li>
+			Préstamos en Dólares
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Hipotecarios</h3>
+          <ul>
+            <li><a href="#">Préstamos Hipotecarios</a></li>
+            <li><a href="#">Préstamos Hipotecarios para residentes en el extranjero</a></li>
+		
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+		
+		 <div class="columna">
+          <h3>Vehículos</h3>
+          <ul>
+            <li><a href="#">Préstamos de Vehículos</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	   </div>
+	   <div class="opcion">
+      <span class="categoria">Seguros</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Seguros</h3>
+          <ul>
+            <li><a href="#">Seguro Médico Internacional Just</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+	  </div>
+    </div>
+  </div>
+  
+  <!-- Sección PYME -->
+  <div id="PYME" class="seccion">
+  <div class="menu">
+    <div class="opcion">
+      <span class="categoria">Cuentas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Corrientes</h3>
+          <ul>
+            <li><a href="#">Cuenta Corriente Empresarial</a></li>
+            <li><a href="#">Cuenta Corriente Más Empresarial</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>ahorros</h3>
+          <ul>
+            <li><a href="#">Cuenta de Ahorro en Pesos</a></li>
+            <li><a href="#">Cuenta de Ahorro en Dólares</a></li>
+			<li><a href="#">Cuenta de Ahorro en Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	 <div class="opcion">
+      <span class="categoria">Inversiones</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Depósito a Plazo</h3>
+          <ul>
+            <li><a href="#">Depósito a Plazo en Pesos</a></li>
+            <li><a href="#">Depósitos a Plazo en Dólares</a></li>
+			<li><a href="#">Depósitos a Plazo en Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Mercado de valores</h3>
+          <ul>
+            <li><a href="#">Inversiones en Títulos-Valores</a></li>
+            <li><a href="#">Fondos de Inversión</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	 <div class="opcion">
+      <span class="categoria">Financiamiento</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Préstamos</h3>
+          <ul>
+            <li><a href="#">Préstamos Comerciales</a></li>
+			 <li><a href="#">Línea de Crédito</a></li>
+			  <li><a href="#">Línea Banreservas de Efectivo</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Crédito</h3>
+          <ul>
+            <li><a href="#">Visa Negocios Banreservas</a></li>
+            <li><a href="#">Visa Flotilla</a></li>
+			<li><a href="#">Visa Empresarial Banreservas</a></li>
+			<li><a href="#">Visa Corporativa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	
+		 <div class="opcion">
+      <span class="categoria">Tarjetas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Debito</h3>
+          <ul>
+            <li><a href="#">Mastercard Débito Negocios</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Crédito</h3>
+          <ul>
+            <li><a href="#">Visa Negocios Banreservas</a></li>
+            <li><a href="#">Visa Flotilla</a></li>
+			<li><a href="#">Visa Empresarial Banreservas</a></li>
+			<li><a href="#">Visa Corporativa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	  
+	   <div class="opcion">
+      <span class="categoria">Otros servicios</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Otros Servicios</h3>
+          <ul>
+            <li><a href="#">Nómina Electrónica</a></li>
+			 <li><a href="#">Factoring Gubernamental Reservas</a></li>
+			  <li><a href="#"> Puntos de Depósitos Comerciales</a></li> 
+			
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+	   </div>
+	   <div class="opcion">
+      <span class="categoria">Seguros</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Seguros</h3>
+          <ul>
+            <li><a href="#">Multiriesgo Pymes</a></li>
+			 <li><a href="#">Negocios De Prisa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+	  </div>
+    </div>
+  </div>
+  
+  <!-- Sección Empresarial -->
+  <div id="Empresarial" class="seccion">
+  <div class="menu">
+  <div class="opcion">
+      <span class="categoria">Soluciones especializadas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>CASH MANAGEMENT</h3>
+          <ul>
+            <li><a href="#">Convenios</a></li>
+            <li><a href="#">e-Factoring Banreservas</a></li>
+			<li><a href="#">Transporte de Valores</a></li>
+			<li><a href="#">TuBanco Empresa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>ATENCION ESPECIALIZADA</h3>
+          <ul>
+            <li><a href="#">Centro de Atención Servicios Especializados (CASE)</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="opcion">
+      <span class="categoria">Cuentas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Corrientes</h3>
+          <ul>
+            <li><a href="#">Cuenta Corriente Empresarial</a></li>
+            <li><a href="#">Cuenta Corriente Más Empresarial</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>ahorros</h3>
+          <ul>
+            <li><a href="#">Cuenta de Ahorro en Pesos</a></li>
+            <li><a href="#">Cuenta de Ahorro Empresarial en Dólares</a></li>
+			<li><a href="#">Cuenta de Ahorro en Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	 <div class="opcion">
+      <span class="categoria">Inversiones</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Depósito a Plazo</h3>
+          <ul>
+            <li><a href="#">Depósito a Plazo en Pesos</a></li>
+            <li><a href="#">Depósitos a Plazo en Dólares</a></li>
+			<li><a href="#">Depósitos a Plazo en Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Mercado de valores</h3>
+          <ul>
+            <li><a href="#">Inversiones en Títulos-Valores</a></li>
+            <li><a href="#">Fondos de Inversión</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+
+	
+		 <div class="opcion">
+      <span class="categoria">Tarjetas</span>
+      <div class="submenu">
+        <div class="columna">
+
+        <div class="columna">
+          <h3>Crédito</h3>
+          <ul>
+            <li><a href="#">Visa Flotilla</a></li>
+			<li><a href="#">Visa Empresarial Banreservas</a></li>
+			<li><a href="#">Visa Corporativa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	    </div>
+	
+		
+	   <div class="opcion">
+      <span class="categoria">Financiamiento</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Préstamos Comerciales</h3>
+          <ul>
+            <li><a href="#">Préstamos Interinos para la construcción</a></li>
+			 <li><a href="#">Préstamos Comerciales</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Líneas de Crédito</h3>
+          <ul>
+            <li><a href="#">Línea de Crédito</a></li>
+            <li><a href="#">Línea Banreservas de Efectivo</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	  
+	   <div class="opcion">
+      <span class="categoria">Negocios internacionales</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Negocios Internacionales</h3>
+          <ul>
+            <li><a href="#">Avales</a></li>
+			 <li><a href="#">Cartas de Crédito</a></li>
+			  <li><a href="#">Compra y venta de divisas</a></li> 
+			  <li><a href="#">Eximbank</a></li> 
+			  <li><a href="#">Fianzas Aduanales</a></li> 
+			  <li><a href="#">Garantías Bancarias</a></li> 
+			  <li><a href="#">Giros Bancarios</a></li> 
+			   <li><a href="#">Transferencias Internacionales</a></li> 
+			    <li><a href="#">Cobranzas</a></li> 
+	 </ul>
+			
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+	   </div>
+	   <div class="opcion">
+      <span class="categoria">Seguros</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Seguros</h3>
+          <ul>
+            <li><a href="#">Multiriesgo Pymes</a></li>
+			 <li><a href="#">Negocios De Prisa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+	  </div>
+    </div>
+  </div>
+  
+   <!-- Sección Gubernamental -->
+  <div id="Gubernamental" class="seccion">
+  <div class="menu">
+  <div class="opcion">
+      <span class="categoria">Soluciones especializadas</span>
+      <div class="submenu">
+
+        <div class="columna">
+          <h3>Soluciones Especializadas</h3>
+          <ul>
+            <li><a href="#">(CASE)</a></li>
+			 <li><a href="#">Convenios</a></li>
+			  <li><a href="#">Nómina Electrónica</a></li>
+			   <li><a href="#">Transporte de Valores</a></li>
+			    <li><a href="#">Tu Banco Empresas</a></li>
+			
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+  
+   <div class="opcion">
+      <span class="categoria">Tarjetas</span>
+      <div class="submenu">
+        <div class="columna">
+
+        <div class="columna">
+          <h3>Crédito</h3>
+          <ul>
+            <li><a href="#">Visa Flotilla</a></li>
+			<li><a href="#">Visa Empresarial Banreservas</a></li>
+			<li><a href="#">Visa Corporativa</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+	  </div>
+	    </div>
+  
+    <div class="opcion">
+      <span class="categoria">Cuentas</span>
+      <div class="submenu">
+   
+        <div class="columna">
+          <h3>Ahorros</h3>
+          <ul>
+			<li><a href="#">Cuenta Corriente Empresarial</a></li>
+            <li><a href="#">Cuenta de Ahorro en Pesos</a></li>
+            <li><a href="#">Cuenta de Ahorro Empresarial en Dólares</a></li>
+			<li><a href="#">Cuenta de Ahorro en Euros</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	
+        
+	 <div class="opcion">
+  <span class="categoria">Financiamiento</span>
+  <div class="submenu">
+    <div class="columna">
+      <h3>Financiamientos</h3>
+      <ul>
+        <li><a href="#">Líneas de Crédito</a></li>
+        <li><a href="#">Préstamos Comerciales</a></li>
+      </ul>
+      <a href="#" class="ver-todos">Ver todos</a>
+    </div>
+  </div>
+</div>
+
+<div class="opcion">
+  <span class="categoria">Negocios Internacionales</span>
+  <div class="submenu">
+    <div class="columna">
+      <h3>Negocios Internacionales</h3>
+      <ul>
+        <li><a href="#">Transferencias Internacionales</a></li>
+        <li><a href="#">Compra y ventas de divisas</a></li>
+        <li><a href="#">Factoring Gubernamental</a></li>
+      </ul>
+      <a href="#" class="ver-todos">Ver todos</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="opcion">
+  <span class="categoria">Inversiones</span>
+  <div class="submenu">
+    <div class="columna">
+      <h3>Depósito a Plazo</h3>
+      <ul>
+        <li><a href="#">Depósito a Plazo en Pesos</a></li>
+        <li><a href="#">Depósitos a Plazo en Dólares</a></li>
+        <li><a href="#">Depósitos a Plazo en Euros</a></li>
+      </ul>
+      <a href="#" class="ver-todos">Ver todos</a>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+	  </div>
+    </div>
+  </div>
+  
+  <!-- Sección Internacional -->
+  <div id="Internacional" class="seccion">
+  <div class="menu">
+    <div class="opcion">
+      <span class="categoria">Oficinas</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Oficinas de Representación</h3>
+          <ul>
+            <li><a href="#">Citas</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+      </div>
+    </div>
+	
+	 <div class="opcion">
+      <span class="categoria">Madrid</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Productos</h3>
+          <ul>
+            <li><a href="#">Cuenta de Ahorro para Residentes en el Extranjero</a></li>
+            <li><a href="#">Préstamos Hipotecarios</a></li>
+			<li><a href="#">Remesas</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="#">Afiliación App Banreservas</a></li>
+            <li><a href="#">Ingresa TuBanco</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	<div class="opcion">
+      <span class="categoria">Nueva York</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Productos</h3>
+          <ul>
+            <li><a href="#">Cuenta de Ahorro para Residentes en el Extranjero</a></li>
+            <li><a href="#">Préstamos Hipotecarios</a></li>
+			<li><a href="#">Remesas</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="#">Afiliación App Banreservas</a></li>
+            <li><a href="#">Ingresa TuBanco</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	<div class="opcion">
+      <span class="categoria">Miami</span>
+      <div class="submenu">
+        <div class="columna">
+          <h3>Productos</h3>
+          <ul>
+            <li><a href="#">Cuenta de Ahorro para Residentes en el Extranjero</a></li>
+            <li><a href="#">Préstamos Hipotecarios</a></li>
+			<li><a href="#">Remesas</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+
+        <div class="columna">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="#">Afiliación App Banreservas</a></li>
+            <li><a href="#">Ingresa TuBanco</a></li>
+          </ul>
+          <a href="#" class="ver-todos">Ver todos</a>
+        </div>
+      </div>
+    </div>
+	
+	 
+
+      </div>
+	  </div>
+    </div>
+  </div>
+  
+</div>
+
+  <script>
+    function mostrarSeccion(id, boton) {
+      document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.top-buttons button').forEach(b => b.classList.remove('active'));
+      boton.classList.add('active');
+    }
+  </script>
+  
+  <!-- Modal -->
+    <div class="modal" id="miModal">
+        <div class="modal-content">
+            <h2>Próximamente</h2>
+            <p>Esta opción estará disponible más adelante.</p>
+            <button id="cerrarModal">Cerrar</button>
+        </div>
+    </div>
+	
+
+	
+	 <!-- Imagen -->
+    <div class="banner">
+        <img src="https://popularenlinea.com/SiteCollectionImages/pr/Notas-de-prensa/Image-viewer/2014/NP-50-delas-mejore-empresas.jpg" alt="Imagen general">
+    </div>
+	
+	<footer>
+        <div>
+            <h3>CONTACTO</h3>
+            <p>📞 809 960 2121</p>
+            <p>📧 contacto@banreservas.com</p>
+            <p>Encuentra una Oficina, Cajero o Subagente cerca de ti</p>
+            <p>¿Deseas invertir en República Dominicana?</p>
+            <p><em>Would you like to invest in the Dominican Republic?</em></p>
+        </div>
+
+        <div>
+            <h3>Sobre Nosotros</h3>
+            <ul>
+                <li><a href="#">Visión, Misión y Valores</a></li>
+                <li><a href="#">Voluntariado Banreservas</a></li>
+                <li><a href="#">Centro Cultural</a></li>
+                <li><a href="#">Responsabilidad social</a></li>
+                <li><a href="#">Memorias anuales</a></li>
+                <li><a href="#">Noticias y Prensa</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Filiales</h3>
+            <ul>
+                <li><a href="#">ARS Reservas</a></li>
+                <li><a href="#">Seguros Reservas</a></li>
+                <li><a href="#">AFP Reservas</a></li>
+                <li><a href="#">Fiduciaria Reservas</a></li>
+                <li><a href="#">AFI Reservas</a></li>
+                <li><a href="#">Fundación Reservas del País</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Informaciones</h3>
+            <ul>
+                <li><a href="#">Tu seguridad</a></li>
+                <li><a href="#">Lista bienes disponibles</a></li>
+                <li><a href="#">Tarifario de productos y servicios</a></li>
+                <li><a href="#">Protección al Usuario</a></li>
+                <li><a href="#">Reclamaciones</a></li>
+                <li><a href="#">Manual Antisoborno y Anticorrupción</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="creditos">
+        © 2025 Banreservas - Todos los derechos reservados
+    </div>
+  
+  <script>
+        // Mostrar/ocultar submenú
+        document.querySelectorAll('.opcion').forEach(opcion => {
+            const submenu = opcion.querySelector('.submenu');
+            opcion.addEventListener('mouseenter', () => {
+                submenu.style.display = 'flex';
+            });
+            opcion.addEventListener('mouseleave', () => {
+                submenu.style.display = 'none';
+            });
+        });
+
+        // Capturar clics
+        const modal = document.getElementById("miModal");
+        const cerrarBtn = document.getElementById("cerrarModal");
+
+        document.querySelectorAll('.submenu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = "flex"; 
+            });
+        });
+
+        cerrarBtn.addEventListener('click', () => {
+            modal.style.display = "none"; 
+        });
+
+        // Clic fuera del contenido
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
